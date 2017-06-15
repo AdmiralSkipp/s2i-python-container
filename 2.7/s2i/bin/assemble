@@ -14,6 +14,10 @@ shopt -s dotglob
 echo "---> Installing application source ..."
 mv /tmp/src/* ./
 
+echo "What is fix-permissions?"
+which fix-permissions
+cat $(which fix-permissions)
+
 if [[ ! -z "$UPGRADE_PIP_TO_LATEST" ]]; then
   echo "---> Upgrading pip to latest version ..."
   pip install -U pip
@@ -54,9 +58,6 @@ if should_collectstatic; then
     python $manage_file collectstatic --noinput
   )
 fi
-
-which fix-permissions
-cat $(which fix-permissions)
 
 # Fix source directory permissions
 fix-permissions ./
