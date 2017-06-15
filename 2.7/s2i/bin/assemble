@@ -55,6 +55,9 @@ if should_collectstatic; then
   )
 fi
 
+which fix-permissions
+cat $(which fix-permissions)
+
 # Fix source directory permissions
 fix-permissions ./
 # set permissions for any installed artifacts
